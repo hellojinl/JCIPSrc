@@ -1,0 +1,8 @@
+
+// (-_-)
+public void log( String msg ) throws InterruptedException {
+    if ( !shutdownRequested )
+        queue.put( msg );
+    else
+        throw new IllegalStateException("logger is shut down");
+}
